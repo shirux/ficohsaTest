@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 
 // Database configurations
 const db = require("./models");
-const dbConfig = require("./config/db.config");
 
 // Init app
 const app = express();
@@ -33,7 +32,7 @@ app.use(async (err, req, res, next) => {
 
 // Connect to database and init app
 db.mongoose
-  .connect(dbConfig.DB_CONN_URL)
+  .connect("mongodb+srv://root:toor@cluster0.1cm0djm.mongodb.net/ficohsa")
   .then(() => {
     console.log("Connected");
     app.listen(process.env.PORT || 3000);
